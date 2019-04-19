@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70D8EA5D-B6D2-4E03-9385-16F7CE2571D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mjs.AW.UTL590025.API</RootNamespace>
+    <AssemblyName>Mjs.AW.UTL590025.API</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Mjs.AW.UTL590025.API.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Actions\X01\GetHelpLinkAction.cs" />
+    <Compile Include="Controllers\X01\UTL590025X01Controller.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Validators\X01\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../FW_BE/Mjs.AW.Common-DS/Mjs.AW.Common/Mjs.AW.Common.csproj">
+      <Project>{C9AC649E-D203-4A84-A50E-1CDDC9A25FA0}</Project>
+      <Name>Mjs.AW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../FW_BE/Mjs.AW.Common-DS/Mjs.AW.Data/Mjs.AW.Data.csproj">
+      <Project>{372F9540-0AEB-48F6-A1AA-136DCD36D787}</Project>
+      <Name>Mjs.AW.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../FW_BE/Mjs.AW.Common-DS/Mjs.AW.Service.Interface/Mjs.AW.Service.Interface.csproj">
+      <Project>{642E8AAD-79E6-4335-BD9D-3080443C27DC}</Project>
+      <Name>Mjs.AW.Service.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../FW_BE/Mjs.AW.CommonWeb-DS/Mjs.AW.Common.Web.API/Mjs.AW.Common.Web.API.csproj">
+      <Project>{B016C5A0-59A1-4958-9E85-695F5E8E79C4}</Project>
+      <Name>Mjs.AW.Common.Web.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mjs.AW.UTL590025.BusinessLogic.Interface\Mjs.AW.UTL590025.BusinessLogic.Interface.csproj">
+      <Project>{B2A7448E-744C-400B-9039-F6EF9BBA5463}</Project>
+      <Name>Mjs.AW.UTL590025.BusinessLogic.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mjs.AW.External.Data.Dapper">
+      <HintPath>..\..\..\Deployment\Mjs.AW.ThirdParty-DS\Mjs.AW.ThirdParty\Mjs.AW.External.Data.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\Deployment\Mjs.AW.ThirdParty-DS\Mjs.AW.ThirdParty\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\..\Deployment\Mjs.AW.ThirdParty-DS\Mjs.AW.ThirdParty\System.Web.Http.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
